@@ -1,0 +1,85 @@
+TITLE:
+
+Joey Vongphasouk
+CSCI 261 Section C
+Replicant Space Invaders Attempt
+
+
+PROBLEM DESCRIPTION:
+The program I am trying to make is a replica version of the arcade game Space Invaders.
+The goal of the game is to defend against a group of oncoming enemies from reaching the base.
+The end is inevitable though, so the real goal is to score the highest number of points, which
+is gained through different functions. The player controls a ship to and from each side of the
+screen and can fire a laser onto the incoming enemy. The player also has three lives; however,
+all lives will be lost if the enemy reaches the base of the screen. The game I am trying to
+implement will attempt at these three lives and will also attempt to implement a twist onto
+the base game. This twist is to add a rocket where a life will be used as ammo in exchange
+for a massive rocket blast that will have an AOE onto the enemies.
+
+
+PROGRAM DOCUMENTATION:
+To run the program, run the executable called 'FP.exe'. The window pops up then and the user is able to
+control the rocket ship at the bottom. Controls include the buttons 'A', 'D', Left Arrow, Right Arrow,
+'W', and 'Up Arrow'. Controls A and Left arrow move the player to the left and controls D and right arrow
+move the player to the right. Controls W and Up Arrow send a missile upwards. To close the program, the user
+can either close manually using the window close button, or close by pressing the escape key. There are also
+hidden key inputs 'I' and 'O', where the attack speed of the player can increase or decrease, however such are
+developer keys and can crash the program if used improperly.
+
+A lot of things had not been implemented into the program that had been implemented into the original game.
+Crucial elements such as lives, time, audio, and more importantly, the shields had not been implemented into
+the program. Another implementation that was sought after was special moves such as sending a big AOE rocket
+that consumed a life upon use.
+
+
+DATA STRUCTURE:
+The data structure that has been used in this program is the vector data structure. This is because
+of the ease of use in creating a large symmetrical area of enemies. In the original game, the enemies
+are loaded in an array, thus using other data structures such as a linked list would be troublesome to
+use as 2D linked lists are harder to maneuver.
+
+The vector data structure is used in both one dimensional and two dimensional. The one dimensional vectors
+stored in pointers to bullets, which represented either the player bullets or enemy bullets. They were later
+deleted when intersect with another opposing object or out of bounds. The second dimensional vector stored
+in enemies where such was manipulated with respect to rows and columns.
+
+
+TESTS:
+There are not many test cases in which can be seen through this program, however game end cases can be included
+here. Such game end states include:
+    - Getting hit by an enemy missile
+    - Enemy reaches end (Earth)
+There are also other cases to the user input, such as:
+    - Collisions with window boundary
+    - Dev keys increasing or decreasing attack speed
+    - Other keys do not do anything
+    - Window options such as resize had been taken out to keep boundaries constant
+These cases have been tested against in the game.
+
+Some following scores had been achieved by playing the game:
+    - 0
+    - 55000
+    - 10200
+    - 30200
+    - 200
+
+Noticeable game bugs with logic that was found included
+    - Enemy not being able to reach player when player is at end of window
+    - Player immediatly dying due to instantaneous start of game
+        (can be solved using a game menu)
+    - Game over screen not displaying when called upon (MASSIVE BUG)
+
+
+REFLECTIONS:
+I had learned a lot from this project. Although I had basically dived into the deep end of SFML
+where I had no prior experience starting making a highly technical game, I was able to learn through
+online resources and understand the overall process of making games through OOP. What was really
+insightful was learning everthing was basically contained in the game class and almost nothing happened
+in the main.cpp. I had found this to be perplexing as I was used to doing procedual oriented programming,
+and never understood the power that classes have. With that said, the project that I had chose was way out
+of my scope as I had never experimented with SFML until Lab 7A, where something was to be drawn using basic
+shapes. Coding Space Invaders showed so much problems when manipulating the SFML library, especially with
+the game over screen, where despite being structure the same way the points system had been made, would
+make the exceutable not run. This became even stranger when the executable was able to be compiled.
+If I had the chance to do a different final project, I still would choose SFML, however a more simpler game
+such as MineSweeper or Snake would be pursued.
